@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useState, useTransition, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useDebounce } from '@/hooks/useDebounce'
-import { useEffect } from 'react'
 
 export default function SearchBar({ initialValue = '' }: { initialValue?: string }) {
   const router = useRouter()
@@ -26,17 +25,16 @@ export default function SearchBar({ initialValue = '' }: { initialValue?: string
   }, [debounced]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="search-bar">
-      <svg className="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35" strokeLinecap="round" />
-      </svg>
+    <div className="relative flex items-center">
+      <span className="absolute left-3 material-symbols-outlined text-[16px] text-on-surface-variant">
+        search
+      </span>
       <input
         type="search"
-        className="search-input"
         placeholder="Search posts…"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        className="w-full bg-surface-container rounded-lg pl-9 pr-4 py-2 text-sm text-on-surface placeholder:text-on-surface-variant/50 border border-outline-variant focus:border-primary focus:outline-none transition-colors"
       />
     </div>
   )

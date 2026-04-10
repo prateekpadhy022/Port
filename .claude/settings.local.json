@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm show:*)",
+      "Bash(node -e \"const m = require\\('/c/Users/admin/Port/node_modules/next-mdx-remote/package.json'\\); console.log\\(Object.keys\\(m.exports || {}\\)\\)\")",
+      "Bash(node:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(node_modules/.bin/next lint:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(git -C /c/Users/admin/Port add app/ components/ hooks/ data/ lib/ prisma/ middleware.ts next.config.ts tsconfig.json .gitignore .env.example eslint.config.js package.json package-lock.json)",
+      "Bash(git -C /c/Users/admin/Port status --short)",
+      "Bash(git:*)",
+      "Bash(npx prisma:*)",
+      "Bash(curl -s http://localhost:3000 -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s http://localhost:3000/about -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s http://localhost:3000/blog -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s http://localhost:3000/api/posts -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s \"http://localhost:3000/api/posts?status=published\")",
+      "WebFetch(domain:stitch.withgoogle.com)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":3000\")"
+    ]
+  }
+}
